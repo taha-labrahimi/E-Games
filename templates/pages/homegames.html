@@ -1,0 +1,731 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<body class="page-body">
+ <br><br><br>
+
+  <!-- main content -->
+  <main class="main-content">
+
+    <!-- content area -->
+    <section class="content-section top_sellers carousel-spotlight ig-carousel pt-0 text-light">
+      <div class="container">
+        {% if user.is_authenticated %}     
+        {% else %}
+        <div class="alert alert-warning">
+          You need to log in to buy games.
+        </div>
+        {% endif %}     
+        
+        <div class="col-4 d-none d-lg-block mx-auto">
+            <form class="input-group border-0 bg-transparent">
+              <input id="searchInput" class="form-control" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sm btn-warning text-secondary my-0 mx-0"  id="searchButton" type="submit"><i class="fas fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+          <br><br><br>
+        <header class="header">
+          <h2>All Games</h2>
+          <br><br>
+        </header>
+        <div class="position-relative">
+          <div class="row">
+            <div class="col-lg-8">
+              
+              <!-- tab panes -->
+              <div id="color_sel_Carousel-content_02" class="tab-content position-relative w-100">
+                <!-- tab item -->
+                <div class="tab-pane fade active show" id="mp-2-01-c" role="tabpanel" aria-labelledby="mp-2-01-tab">
+                  <div class="row" id="container">
+                    <!-- item -->
+                    <div class="col-md-12 mb-4">
+                      <a href="{% url 'panier' %}?product_name=The Legend of Zelda: Breath of the Wild&price=44.99&&image_url=/static/assets/games-image/legendofzilda/BG-img.jpg" class="product-item">
+                        <div class="row align-items-center no-gutters">
+                          <div class="item_img d-none d-sm-block">
+                            <img class="img bl-3 text-primary" src="{% static 'assets/games-image/legendofzilda/BG-img.jpg' %}" alt="Games Store">
+                          </div>
+                          <div class="item_content flex-1 flex-grow pl-0 pl-sm-6 pr-6">
+                            <h6 class="item_title ls-1 small-1 fw-600 text-uppercase mb-1">The Legend of Zelda: Breath of the Wild</h6>
+                            <div class="mb-0">
+                              <i class="mr-2 fab fa-windows"></i>
+                              <i class="mr-2 fab fa-steam"></i>
+                              <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="position-relative">
+                              <span class="item_genre small fw-600">
+                                Action, Adventure
+                              </span>
+                            </div>
+                          </div>
+                          <div class="item_discount d-none d-sm-block">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right text-secondary px-6">
+                                 {% if user.is_authenticated %}    
+                            <span class="fw-600 btn bg-warning">Add to Cart</span> 
+                                    {% else %}
+                                    {% endif %}   
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item_price">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right">
+                                <span class="fw-600 td-lt">€144.99</span><br>
+                                <span class="fw-600">€44.99</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- /.item -->
+                    <!-- item -->
+                    <div class="col-md-12 mb-4">
+                      <a href="{% url 'panier' %}?product_name=Red Dead Redemption 2&price=44.99&&image_url=/static/assets/games-image/RDR2/BG-img.jpg" class="product-item">
+                        <div class="row align-items-center no-gutters">
+                          <div class="item_img d-none d-sm-block">
+                            <img class="img bl-3 text-primary" src="{% static 'assets/games-image/RDR2/BG-img.jpg' %}" alt="Games Store">
+                          </div>
+                          <div class="item_content flex-1 flex-grow pl-0 pl-sm-6 pr-6">
+                            <h6 class="item_title ls-1 small-1 fw-600 text-uppercase mb-1">Red Dead Redemption 2</h6>
+                            <div class="mb-0">
+                              <i class="mr-2 fab fa-windows"></i>
+                              <i class="mr-2 fab fa-steam"></i>
+                              <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="position-relative">
+                              <span class="item_genre small fw-600">
+                                Action, Adventure
+                              </span>
+                            </div>
+                          </div>
+                          <div class="item_discount d-none d-sm-block">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right text-secondary px-6">
+                                 {% if user.is_authenticated %}    
+<span class="fw-600 btn bg-warning">Add to Cart</span> 
+        {% else %}
+        {% endif %}   
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item_price">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right">
+                                <span class="fw-600 td-lt">€144.99</span><br>
+                                <span class="fw-600">€44.99</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- /.item -->
+                    <!-- item -->
+                    <div class="col-md-12 mb-4">
+                      <a href="{% url 'panier' %}?product_name=Minecraft&price=44.99&&image_url=/static/assets/games-image/minecraft/BG-img.jpg" class="product-item">
+                        <div class="row align-items-center no-gutters">
+                          <div class="item_img d-none d-sm-block">
+                            <img class="img bl-3 text-primary" src="{% static 'assets/games-image/minecraft/BG-img.jpg' %}" alt="Games Store">
+                          </div>
+                          <div class="item_content flex-1 flex-grow pl-0 pl-sm-6 pr-6">
+                            <h6 class="item_title ls-1 small-1 fw-600 text-uppercase mb-1">Minecraft</h6>
+                            <div class="mb-0">
+                              <i class="mr-2 fab fa-windows"></i>
+                              <i class="mr-2 fab fa-steam"></i>
+                              <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="position-relative">
+                              <span class="item_genre small fw-600">
+                                Action, Adventure
+                              </span>
+                            </div>
+                          </div>
+                          <div class="item_discount d-none d-sm-block">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right text-secondary px-6">
+                                 {% if user.is_authenticated %}    
+<span class="fw-600 btn bg-warning">Add to Cart</span> 
+        {% else %}
+        {% endif %}   
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item_price">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right">
+                                <span class="fw-600 td-lt">€144.99</span><br>
+                                <span class="fw-600">€44.99</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- /.item -->
+                    <!-- item -->
+                    <div class="col-md-12 mb-4">
+                      <a href="{% url 'panier' %}?product_name=Fortnite&price=44.99&image_url=/static/assets/games-image/fortnite/BG-img.jpg" class="product-item">
+                        <div class="row align-items-center no-gutters">
+                          <div class="item_img d-none d-sm-block">
+                            <img class="img bl-3 text-primary" src="{% static 'assets/games-image/fortnite/BG-img.jpg' %}" alt="Games Store">
+                          </div>
+                          <div class="item_content flex-1 flex-grow pl-0 pl-sm-6 pr-6">
+                            <h6 class="item_title ls-1 small-1 fw-600 text-uppercase mb-1">Fortnite</h6>
+                            <div class="mb-0">
+                              <i class="mr-2 fab fa-windows"></i>
+                              <i class="mr-2 fab fa-steam"></i>
+                              <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="position-relative">
+                              <span class="item_genre small fw-600">
+                                Action, Adventure
+                              </span>
+                            </div>
+                          </div>
+                          <div class="item_discount d-none d-sm-block">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right text-secondary px-6">
+                                 {% if user.is_authenticated %}    
+<span class="fw-600 btn bg-warning">Add to Cart</span> 
+        {% else %}
+        {% endif %}   
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item_price">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right">
+                                <span class="fw-600 td-lt">€144.99</span><br>
+                                <span class="fw-600">€44.99</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- /.item -->
+                    <!-- item -->
+                    <div class="col-md-12 mb-4">
+                      <a href="{% url 'panier' %}?product_name=Call of Duty: Warzone&price=44.99&image_url=/static/assets/games-image/COD/BG-img.jpg" class="product-item">
+                        <div class="row align-items-center no-gutters">
+                          <div class="item_img d-none d-sm-block">
+                            <img class="img bl-3 text-primary" src="{% static 'assets/games-image/COD/BG-img.jpg' %}" alt="Games Store">
+                          </div>
+                          <div class="item_content flex-1 flex-grow pl-0 pl-sm-6 pr-6">
+                            <h6 class="item_title ls-1 small-1 fw-600 text-uppercase mb-1">Call of Duty: Warzone</h6>
+                            <div class="mb-0">
+                              <i class="mr-2 fab fa-windows"></i>
+                              <i class="mr-2 fab fa-steam"></i>
+                              <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="position-relative">
+                              <span class="item_genre small fw-600">
+                                Action, Adventure
+                              </span>
+                            </div>
+                          </div>
+                          <div class="item_discount d-none d-sm-block">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right text-secondary px-6">
+                                 {% if user.is_authenticated %}    
+<span class="fw-600 btn bg-warning">Add to Cart</span> 
+        {% else %}
+        {% endif %}   
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item_price">
+                            <div class="row align-items-center h-100 no-gutters">
+                              <div class="text-right">
+                                <span class="fw-600 td-lt">€144.99</span><br>
+                                <span class="fw-600">€44.99</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- /.item -->
+                  </div>
+                </div>
+                <!-- /.tab item -->
+              </div>
+              <!-- /.tab panes -->
+
+            </div>
+            <div class="col-lg-4">
+              <div class="filters border border-secondary rounded p-4">
+                <ul class="sidebar-nav-light-hover list-unstyled mb-0 text-unset small-3 fw-600">
+
+                  <li class="nav-item text-light transition mb-2 active">
+                    <a href="" aria-expanded="false" data-toggle="collapse" class="nav-link py-2 px-3 text-uppercase  collapsed collapser collapser-active nav-link-border">
+                        <span class="p-collapsing-title">Platform</span>
+                    </a>
+                    <div class="collapse nav-collapse show">
+                        <ul class="list-unstyled py-2">
+                          <li class="nav-item">
+                            <div class="nav-link py-1 px-3">
+                                <form>
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" id="PC_check" checked>
+                                    <label class="custom-control-label" for="PC_check">
+                                      PC
+                                    </label>
+                                  </div>
+                                </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-1 px-3">
+                                <form>
+                                  <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" id="MAC_check">
+                                    <label class="custom-control-label" for="MAC_check">
+                                      MAC
+                                    </label>
+                                  </div>
+                                </form>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item text-light transition mb-2">
+                    <a href="" aria-expanded="false" data-toggle="collapse" class="nav-link py-2 px-3 text-uppercase  collapsed collapser nav-link-border">
+                        <span class="p-collapsing-title">Genre</span>
+                    </a>
+                    <div class="collapse nav-collapse">
+                        <ul class="list-unstyled py-2">
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Action_check">
+                                  <label class="custom-control-label" for="Action_check">
+                                    Action
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Adventure_check">
+                                  <label class="custom-control-label" for="Adventure_check">
+                                    Adventure
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Casual_check">
+                                  <label class="custom-control-label" for="Casual_check">
+                                    Casual
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Early_access_check">
+                                  <label class="custom-control-label" for="Early_access_check">
+                                    Early Access
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Free_to_play_check">
+                                  <label class="custom-control-label" for="Free_to_play_check">
+                                    Free to Play
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Indie_check">
+                                  <label class="custom-control-label" for="Indie_check">
+                                    Indie
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Massively_multiplayer_check">
+                                  <label class="custom-control-label" for="Massively_multiplayer_check">
+                                    Massively Multiplayer
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Racing_check">
+                                  <label class="custom-control-label" for="Racing_check">
+                                    Racing
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="RPG_check">
+                                  <label class="custom-control-label" for="RPG_check">
+                                    RPG
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Simulation_check">
+                                  <label class="custom-control-label" for="Simulation_check">
+                                    Simulation
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Sports_check">
+                                  <label class="custom-control-label" for="Sports_check">
+                                    Sports
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Strategy_check">
+                                  <label class="custom-control-label" for="Strategy_check">
+                                    Strategy
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item text-light transition mb-2">
+                    <a href="" aria-expanded="false" data-toggle="collapse" class="nav-link py-2 px-3 text-uppercase  collapsed collapser nav-link-border">
+                        <span class="p-collapsing-title">Software</span>
+                    </a>
+                    <div class="collapse nav-collapse">
+                        <ul class="list-unstyled py-2">
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Animation_modeling_check">
+                                  <label class="custom-control-label" for="Animation_modeling_check">
+                                    Animation & Modeling
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Audio_production_check">
+                                  <label class="custom-control-label" for="Audio_production_check">
+                                    Audio Production
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Design_check">
+                                  <label class="custom-control-label" for="Design_check">
+                                    Design
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Education_check">
+                                  <label class="custom-control-label" for="Education_check">
+                                    Education
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Game_development_check">
+                                  <label class="custom-control-label" for="Game_development_check">
+                                    Game Development
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Photo_editing_check">
+                                  <label class="custom-control-label" for="Photo_editing_check">
+                                    Photo Editing
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Utilities_check">
+                                  <label class="custom-control-label" for="Utilities_check">
+                                    Utilities
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Video_production_check">
+                                  <label class="custom-control-label" for="Video_production_check">
+                                    Video Production
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Web_publishing_check">
+                                  <label class="custom-control-label" for="Web_publishing_check">
+                                    Web Publishing
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item text-light transition mb-2">
+                    <a href="" aria-expanded="false" data-toggle="collapse" class="nav-link py-2 px-3 text-uppercase  collapsed collapser nav-link-border">
+                        <span class="p-collapsing-title">Supported VR</span>
+                    </a>
+                    <div class="collapse nav-collapse">
+                        <ul class="list-unstyled py-2">
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="VR_check">
+                                  <label class="custom-control-label" for="VR_check">
+                                    Euismod VR
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="VR_check_2">
+                                  <label class="custom-control-label" for="VR_check_2">
+                                    Euismod VR
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="VR_check_3">
+                                  <label class="custom-control-label" for="VR_check_3">
+                                    Euismod VR
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item text-light transition mb-2">
+                    <a href="" aria-expanded="false" data-toggle="collapse" class="nav-link py-2 px-3 text-uppercase  collapsed collapser nav-link-border">
+                        <span class="p-collapsing-title">Release Status</span>
+                    </a>
+                    <div class="collapse nav-collapse">
+                        <ul class="list-unstyled py-2">
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Released_check">
+                                  <label class="custom-control-label" for="Released_check">
+                                    Released
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Pre_Purchase_check">
+                                  <label class="custom-control-label" for="Pre_Purchase_check">
+                                    Pre-Purchase
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                          <li class="nav-item">
+                            <div class="nav-link py-2 px-3">
+                              <form>
+                                <div class="custom-control custom-checkbox">
+                                  <input class="custom-control-input" type="checkbox" value="" id="Coming_soon_check">
+                                  <label class="custom-control-label" for="Coming_soon_check">
+                                    Coming Soon
+                                  </label>
+                                </div>
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item text-light transition mt-4">
+                    <a href="" class="btn btn-warning d-block">Reset Filter</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </section>
+    <!-- /.content area -->
+
+
+
+
+    <script>
+        
+        document.getElementById('searchButton').addEventListener('click', function() {
+            event.preventDefault();
+        var searchText = document.getElementById('searchInput').value.toLowerCase();
+        var itemTitles = document.getElementsByClassName('item_title');
+        console.log(searchText,itemTitles)
+        for (var i = 0; i < itemTitles.length; i++) {
+            var titleText = itemTitles[i].textContent.toLowerCase();
+            console.log(titleText)
+            var itemDiv = itemTitles[i].closest('.col-md-12');
+            
+            if (titleText.includes(searchText)) {
+            itemDiv.style.display = 'block';
+            } else {
+            itemDiv.style.display = 'none';
+            }
+        }
+        });
+       
+    //   $(document).ready(function() {
+        
+    //     // Search button click event
+    //     $("#search-button").click(function() {
+        
+    //       var searchValue = $("#search-input")?.val()?.toLowerCase();
+    //       console.log(searchValue)
+    //       filterProducts(searchValue);
+    //     });
+
+    //     // Search input enter key press event
+    //     $("#search-input").keypress(function(event) {
+    //         console.log(event)
+    //       if (event.keyCode === 13) {
+    //         event.preventDefault();
+    //         var searchValue = $("#search-input").val().toLowerCase();
+    //         filterProducts(searchValue);
+    //       }
+    //     });
+
+    //     // Function to filter the products based on the search value
+    //     function filterProducts(searchValue) {
+    //       $("#product-list .product-item").each(function() {
+    //         var productName = $(this).find(".item_title")?.text()?.toLowerCase();
+    //         console.log(productName)
+    //         if (productName.includes(searchValue)) {
+    //             console.log("if if ")
+    //           $(this).show();
+    //         } else {
+    //             console.log("else ")    
+    //           $(this).hide();
+    //         }
+    //       });
+    //     }
+    //   });
+    console.log("ddddd")
+    </script>
+  </main>
+</body>
+
+{% endblock content%}
